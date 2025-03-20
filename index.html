@@ -10,16 +10,22 @@
 </head>
 
 <body>
-    <h2>Editor de Texto con JavaScript</h2>
+    <h2>Editor de Texto para lua con cariño</h2>
     <div id="editor" contenteditable="true">Escribe tu texto aquí...</div>
     <br>
-    <input type="text" id="buscar" placeholder="Buscar texto">
-    <button onclick="buscarTexto()">Buscar</button>
-    <button onclick="ponerNegrita()">Negrita</button>
-    <button onclick="convertirMayusculas()">MAYÚSCULAS</button>
-    <button onclick="convertirMinusculas()">minúsculas</button>
-    <button onclick="reemplazarTexto()">Reemplazar</button>
-    <br>
+
+    <div class="buttons">
+        <input type="text" id="buscar" placeholder="Buscar texto">
+        <button onclick="buscarTexto()">Buscar</button>
+        <button onclick="ponerNegrita()">Negrita</button>
+        <button onclick="convertirMayusculas()">MAYÚSCULAS</button>
+        <button onclick="convertirMinusculas()">minúsculas</button>
+        <button onclick="reemplazarTexto()">Reemplazar</button>
+        <br>
+
+
+    </div>
+    
     <script src="main.js"></script>
 </body>
 
