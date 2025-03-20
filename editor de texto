@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #editor {
+            width: 80%;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px auto;
+            text-align: left;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Editor de Texto con JavaScript</h2>
+    <div id="editor" contenteditable="true">Escribe tu texto aquí...</div>
+    <br>
+    <input type="text" id="buscar" placeholder="Buscar texto">
+    <button onclick="buscarTexto()">Buscar</button>
+    <button onclick="ponerNegrita()">Negrita</button>
+    <button onclick="convertirMayusculas()">MAYÚSCULAS</button>
+    <button onclick="convertirMinusculas()">minúsculas</button>
+    <button onclick="reemplazarTexto()">Reemplazar</button>
+    <br>
+    <script>
+        function buscarTexto() {
+            let texto = document.getElementById("editor").innerHTML;
+            let palabra = document.getElementById("buscar").value;
+            let regex = new RegExp(`(${palabra})`, "gi");
+            let nuevoTexto = texto.replace(regex, '<mark>$1</mark>');
+            document.getElementById("editor").innerHTML = nuevoTexto;
+        }
+
+        function ponerNegrita() {
+            document.execCommand('bold');
+        }
+
+        function convertirMayusculas() {
+            let editor = document.getElementById("editor");
+            editor.innerHTML = editor.innerText.toUpperCase();
+        }
+
+        function convertirMinusculas() {
+            let editor = document.getElementById("editor");
+            editor.innerHTML = editor.innerText.toLowerCase();
+        }
+
+        function reemplazarTexto() {
+            let palabra = prompt("Palabra a reemplazar:");
+            let nuevaPalabra = prompt("Nueva palabra:");
+            let editor = document.getElementById("editor");
+            let regex = new RegExp(palabra, "gi");
+            editor.innerHTML = editor.innerText.replace(regex, nuevaPalabra);
+        }
+    </script>
+</body>
+</html>
