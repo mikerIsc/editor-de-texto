@@ -4,26 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor de Texto</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        #editor {
-            width: 80%;
-            height: 200px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 20px auto;
-            text-align: left;
-            white-space: pre-wrap;
-            overflow-wrap: break-word;
-        }
-        button {
-            margin: 5px;
-        }
-    </style>
 </head>
 <body>
     <h2>Editor de Texto con JavaScript</h2>
