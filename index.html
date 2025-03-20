@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor de Texto</title>
-   <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <h2>Editor de Texto con JavaScript</h2>
     <div id="editor" contenteditable="true">Escribe tu texto aquí...</div>
@@ -17,36 +19,7 @@
     <button onclick="convertirMinusculas()">minúsculas</button>
     <button onclick="reemplazarTexto()">Reemplazar</button>
     <br>
-    <script>
-        function buscarTexto() {
-            let texto = document.getElementById("editor").innerHTML;
-            let palabra = document.getElementById("buscar").value;
-            let regex = new RegExp(`(${palabra})`, "gi");
-            let nuevoTexto = texto.replace(regex, '<mark>$1</mark>');
-            document.getElementById("editor").innerHTML = nuevoTexto;
-        }
-
-        function ponerNegrita() {
-            document.execCommand('bold');
-        }
-
-        function convertirMayusculas() {
-            let editor = document.getElementById("editor");
-            editor.innerHTML = editor.innerText.toUpperCase();
-        }
-
-        function convertirMinusculas() {
-            let editor = document.getElementById("editor");
-            editor.innerHTML = editor.innerText.toLowerCase();
-        }
-
-        function reemplazarTexto() {
-            let palabra = prompt("Palabra a reemplazar:");
-            let nuevaPalabra = prompt("Nueva palabra:");
-            let editor = document.getElementById("editor");
-            let regex = new RegExp(palabra, "gi");
-            editor.innerHTML = editor.innerText.replace(regex, nuevaPalabra);
-        }
-    </script>
+    <script src="main.js"></script>
 </body>
+
 </html>
